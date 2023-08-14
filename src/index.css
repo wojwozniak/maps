@@ -5,17 +5,11 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-html {
-  background-color: navy;
 }
 
 body, #root, html {
@@ -39,5 +33,11 @@ body, #root, html {
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #242424;
+  background-color: #0A2463;
+}
+
+.svg {
+  margin: 20px;
+  margin-left: 7vw;
+  margin-right: 7vw;
 }
