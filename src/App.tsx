@@ -5,7 +5,7 @@ import './index.css'
 function App() {
   return (
     <div className='App'>
-      <h1>Swiss Map</h1>
+      <h1>Interactive data viewer</h1>
       <Map />
     </div>
   )
