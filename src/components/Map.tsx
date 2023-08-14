@@ -10,11 +10,10 @@ const Map:React.FC = () => {
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     svg.attr('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
-    // svg background color
-    svg.style('background-color', '#242424');
+    svg.style('background-color', '#FFFFF0');
 
     const projection = d3.geoMercator()
-      .scale(4000)
+      .scale(3500)
       .center([8.2310, 46.8182])
       .translate([svgWidth / 2, svgHeight / 2]);
 
@@ -33,7 +32,7 @@ const Map:React.FC = () => {
         .style('stroke-width', .2);
     };
 
-    d3.json('https://raw.githubusercontent.com/mikpan/ch-maps/master/geo/ch-districts.geojson')
+    d3.json('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson')
         .then(ready)
         .catch((error) => {
             throw error;
