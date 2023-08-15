@@ -119,3 +119,7 @@ body, #root, html {
 .footer a {
   color: goldenrod;
 }
+
+h1 {
+  margin: 0px;
+}
