@@ -14,7 +14,7 @@ const PickDataMenu:React.FC<PickDataMenuProps> = ({updateDataset, openPopup}) =>
 
   return (
     <div className='pick__data__menu' style={openPopup ? openStyle : emptyStyle}>
-        PickDataMenu
+        <p>test</p>
     </div>
   )
 }
