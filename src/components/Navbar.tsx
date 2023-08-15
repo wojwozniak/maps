@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup }) => {
   return (
     <div
       style={{
-        backgroundColor: openPopup ? '#8d818c' : '#b4b8c5',
+        backgroundColor: openPopup ? '#FFFFFF' : '#D52B1E',
         transition: 'all 0.5s ease-in-out',
         height: '50px',
         display: 'flex',
@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup }) => {
       }}
     >
         <div style={{ fontWeight: 'bold' }}>
-            {!openPopup ? <h2 style={{color: 'white'}}>Swiss Data Viewer</h2> : <></>}
+            {!openPopup ? <h2 style={{color: 'white'}}>Interactive Swiss Maps</h2> : <></>}
         </div>
           <button
           style={{

@@ -1,8 +1,7 @@
 const Footer = () => {
   return (
     <div className='footer'>
-        <p>Geographical data from <a href="#" target="_blank">here</a></p>
-        <p>Created by <a href="#" target="_blank">@wojwozniak</a> using d3js and react</p>
+        <p>Created by <a href="#" target="_blank">@wojwozniak</a> using d3js and react. <a href="#" target="_blank">Data source</a></p>
     </div>
   )
 }
