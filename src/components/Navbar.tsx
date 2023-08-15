@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 interface NavbarProps {
   onMenuClick: () => void;
@@ -16,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, dataset, openPopup }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 20px',
+        padding: '0 10px',
         position: 'fixed',
         top: 0,
         left: 0,
@@ -28,19 +29,21 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, dataset, openPopup }) => {
         <div style={{ fontWeight: 'bold' }}>
             <h2>{dataset}</h2>
         </div>
-        <div>
-            <button
-            style={{
-                marginRight: '10px',
-                backgroundColor: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-            }}
-            onClick={onMenuClick}
-            >
-                Burger Menu
-            </button>
-        </div>
+          <button
+          style={{
+              backgroundColor: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+          }}
+          onClick={onMenuClick}
+          >
+              {openPopup 
+              ? <AiOutlineClose size={30} />
+              : <AiOutlineMenu size={30} /> }
+          </button>
     </div>
   );
 };
