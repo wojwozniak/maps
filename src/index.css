@@ -41,6 +41,7 @@ body, #root, html {
   margin-right: 7vw;
   border: 2px solid #8d818c;
   border-radius: 10px;
+  max-height: 60vmin;
 }
 
 .pick__data__menu {
@@ -75,9 +76,10 @@ body, #root, html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 25%;
   position: absolute;
   bottom: 60px;
+  gap: 5%;
+  width: 100%;
 }
 
 .lang__option {

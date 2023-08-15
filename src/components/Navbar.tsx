@@ -3,11 +3,10 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 interface NavbarProps {
   onMenuClick: () => void;
-  dataset: string;
   openPopup: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onMenuClick, dataset, openPopup }) => {
+const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup }) => {
   return (
     <div
       style={{
@@ -27,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, dataset, openPopup }) => {
       }}
     >
         <div style={{ fontWeight: 'bold' }}>
-            <h2>{dataset}</h2>
+            {!openPopup ? <h2 style={{color: 'white'}}>Swiss Data Viewer</h2> : <></>}
         </div>
           <button
           style={{

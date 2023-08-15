@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import Flag from './Flag';
 import { useState } from 'react';
 
-const LangMenu = ({openPopup} : {openPopup : boolean}) => {
+const LangMenu = () => {
 
     const { i18n } = useTranslation();
 
@@ -15,13 +15,11 @@ const LangMenu = ({openPopup} : {openPopup : boolean}) => {
 
     const [lang, setLang] = useState(currentLang);
 
-    const emptyStyle = {};
-    const hiddenStyle = { display: 'none' };
     const selectedLangStyle = { border : '2px solid gold' }
     const notSelectedLangStyle = {border: '2px solid transparent' }
 
     return (
-        <div className="lang__picker" style={openPopup ? emptyStyle : hiddenStyle}>
+        <div className="lang__picker">
             <div className='lang__option' 
             style = { lang == 'de' ? selectedLangStyle : notSelectedLangStyle }
             >

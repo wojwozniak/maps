@@ -19,7 +19,7 @@ const PickDataMenu:React.FC<PickDataMenuProps> = ({updateDataset, openPopup}) =>
         <div className="content">
             <h2>Welcome to Interactive Swiss Data Viewer!</h2>
             <h4>Choose dataset to Explore:</h4>
-            <LangMenu openPopup={openPopup} />
+            <LangMenu />
         </div>
     </div>
   )

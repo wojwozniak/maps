@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div className='App'>
       <I18nextProvider i18n={i18n}>
-        <Navbar onMenuClick={toggleMenu} dataset={dataset} openPopup={openPopup} />
+        <Navbar onMenuClick={toggleMenu} openPopup={openPopup} />
         <PickDataMenu updateDataset={updateDataset} openPopup={openPopup} />
         <Map />
         <Footer />
