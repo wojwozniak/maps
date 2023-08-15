@@ -10,7 +10,7 @@ const Map:React.FC = () => {
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     svg.attr('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
-    svg.style('background-color', '#FFFFF0');
+    svg.style('background-color', '#FEFFFE');
 
     const projection = d3.geoMercator()
       .scale(3500)
