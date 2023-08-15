@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import LangMenu from './LangMenu';
 
 interface NavbarProps {
   onMenuClick: () => void;
@@ -9,34 +10,15 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup }) => {
   return (
     <div
-      style={{
-        backgroundColor: openPopup ? '#FFFFFF' : '#D52B1E',
-        transition: 'all 0.5s ease-in-out',
-        height: '50px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: '0 10px',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        overflow: 'hidden',
-        zIndex: 100,
-      }}
-    >
+      style={{backgroundColor: openPopup ? '#FFFFFF' : '#D52B1E'}}
+      className='navbar'
+      >
         <div style={{ fontWeight: 'bold' }}>
             {!openPopup ? <h2 style={{color: 'white'}}>Interactive Swiss Maps</h2> : <></>}
         </div>
+        <LangMenu openPopup={openPopup} />
           <button
-          style={{
-              backgroundColor: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-          }}
+          className='menu__button'
           onClick={onMenuClick}
           >
               {openPopup 

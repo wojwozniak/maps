@@ -25,6 +25,21 @@ body, #root, html {
   justify-content: center;
 }
 
+.navbar {
+  background-color: #D52B1E;
+  transition: all 0.5s ease-in-out;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -70,36 +85,6 @@ body, #root, html {
   height: 80%;
 }
 
-.lang__picker {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 60px;
-  gap: 5%;
-  width: 100%;
-}
-
-.lang__option {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  gap: 10px;
-  background-color: #E9EBF8;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  color: black;
-  border-radius: 10px;
-  padding: 0px 20px;
-  cursor: pointer;
-}
-
-.lang__option:hover {
-  background-color: #b4b8c5;
-  color: white;
-}
-
 .footer {
   position: absolute;
   bottom: 10px;
@@ -112,6 +97,7 @@ body, #root, html {
   font-size: 12px;
   border-top: 1px solid silver;
   margin-bottom: 10px;
+  z-index: 100;
 }
 
 .footer p {
@@ -126,4 +112,61 @@ body, #root, html {
   margin: 0px;
   text-transform: uppercase;
   font-size: 48px;
+}
+
+.nav__lang {
+  position: absolute;
+  right: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  background-color: #D52B1E;
+  padding: 0px 10px 0 15px;
+  border-radius: 0px 0px 10px 10px;
+  transition: .5s ease-in-out;
+  z-index: 20;
+}
+
+.nav__lang__menu {
+  background-color: #D52B1E;
+  position: absolute !important;
+  top: 34px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  height: 0px;
+  transition: height 0.5s ease-in-out, border-radius 0.5s ease-out;
+  gap: 5px;
+  list-style-type: none;
+  padding: 0px 10px;
+  width: 80px;
+  border-radius: 0px 0px 10px 10px;
+  overflow: hidden;
+}
+
+.nav__lang__menu__items {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  width: 100%;
+  z-index: 12;
+}
+
+.menu__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1000;
 }

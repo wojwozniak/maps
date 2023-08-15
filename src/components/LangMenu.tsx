@@ -1,43 +1,58 @@
 import { useTranslation } from 'react-i18next';
 import Flag from './Flag';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
-const LangMenu = () => {
-
+const LangMenu = ({openPopup} : {openPopup : boolean}) => {
     const { i18n } = useTranslation();
-
-
-    const setCurrentLang = (language: string) => {
-        i18n.changeLanguage(language);
-        setLang(language);
-    };
+    const [openLangMenu, setOpenLangMenu] = useState(false);
     const currentLang = i18n.language;
 
     const [lang, setLang] = useState(currentLang);
 
-    const selectedLangStyle = { border : '2px solid gold' }
-    const notSelectedLangStyle = {border: '2px solid transparent' }
+    useEffect(() => {
+        i18n.changeLanguage(lang);
+    }, [lang]);
+
+    const emptyStyle = {};
+    const activeStyle = {
+        borderRadius: "0px 0px 0px 0px",
+        overflow: "visible",
+    };
+    const activeClosedMenuStyle = {
+        borderRadius: "10px 0px 10px 10px",
+        height: "102px"
+    }
+    const showStyle = {
+        height: "102px"
+    }
+    
 
     return (
-        <div className="lang__picker">
-            <div className='lang__option' 
-            style = { lang == 'de' ? selectedLangStyle : notSelectedLangStyle }
-            >
-                <Flag currentLang='de' />
-                <p>German</p>
-            </div>
-            <div className='lang__option'
-            style = { lang == 'en' ? selectedLangStyle : notSelectedLangStyle }
-            >
-                <Flag currentLang='en' />
-                <p>English</p>
-            </div>
-            <div className='lang__option'
-            style = { lang == 'pl' ? selectedLangStyle : notSelectedLangStyle }
-            >
-                <Flag currentLang='pl' />
-                <p>Polish</p>
-            </div>
+        <div 
+            className='nav__lang' 
+            onClick={() => setOpenLangMenu(!openLangMenu)}
+            style={openLangMenu ? activeStyle : emptyStyle}>
+            <Flag currentLang={currentLang} />
+            <ul className="nav__lang__menu" style={openLangMenu ? (openPopup ?activeClosedMenuStyle : showStyle ) : emptyStyle}>
+                <li className='nav__lang__menu__items' onClick={() => setLang('en')}>
+                    English
+                </li>
+                <li 
+                className='nav__lang__menu__items'
+                onClick={() => setLang('pl')}>
+                    Polski
+                </li>
+                <li 
+                className='nav__lang__menu__items'
+                onClick={() => setLang('de')}>
+                    Deutsch
+                </li>
+            </ul>
+
+            {openLangMenu
+                ? <AiOutlineDown size="12px" className='nav__chevron' />
+                : <AiOutlineUp size="12px" className='nav__chevron' />}
         </div>
     )
 }

@@ -1,5 +1,3 @@
-import LangMenu from "./LangMenu";
-
 interface PickDataMenuProps {
     updateDataset: (dataset:string) => void;
     openPopup: boolean;
@@ -19,7 +17,6 @@ const PickDataMenu:React.FC<PickDataMenuProps> = ({updateDataset, openPopup}) =>
         <div className="content">
             <h2>Welcome to Interactive Swiss Data Viewer!</h2>
             <h4>Choose dataset to Explore:</h4>
-            <LangMenu />
         </div>
     </div>
   )

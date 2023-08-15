@@ -8,6 +8,7 @@ const Flag = ({ currentLang }: { currentLang: string }) => {
     const flagStyle = {
         height: '20px',
         width: '30px',
+        border: '1px solid black',
     }
 
     const flagMap: FlagMapType = {
