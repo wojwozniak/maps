@@ -39,7 +39,8 @@ body, #root, html {
   margin: 20px;
   margin-left: 7vw;
   margin-right: 7vw;
-  border: 2px solid black;
+  border: 2px solid #8d818c;
+  border-radius: 10px;
 }
 
 .pick__data__menu {
@@ -48,6 +49,7 @@ body, #root, html {
   left: 0;
   width: 100vw;
   margin-top: 40px;
+  margin-bottom: 40px;
   height: 0px;
   z-index: 10;
   background-color: #8d818c;
@@ -58,4 +60,35 @@ body, #root, html {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+}
+
+.pick__data__menu .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 80%;
+}
+
+.lang__picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25%;
+  position: absolute;
+  bottom: 60px;
+}
+
+.lang__option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  background-color: #E9EBF8;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  color: black;
+  border-radius: 10px;
+  padding: 0px 20px;
 }
