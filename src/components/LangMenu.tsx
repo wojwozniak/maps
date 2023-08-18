@@ -3,7 +3,12 @@ import Flag from './Flag';
 import { useEffect, useState } from 'react';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 
-const LangMenu = ({openPopup} : {openPopup : boolean}) => {
+interface LangMenuProps {
+    openPopup: boolean;
+    getUpdatedLang: (s: string) => void;
+}
+
+const LangMenu:React.FC<LangMenuProps> = ({openPopup, getUpdatedLang}) => {
     const { i18n } = useTranslation();
     const [openLangMenu, setOpenLangMenu] = useState(false);
     const currentLang = i18n.language;
@@ -12,6 +17,7 @@ const LangMenu = ({openPopup} : {openPopup : boolean}) => {
 
     useEffect(() => {
         i18n.changeLanguage(lang);
+        getUpdatedLang(lang);
     }, [lang]);
 
     const emptyStyle = {};
