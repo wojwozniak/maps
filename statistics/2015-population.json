@@ -1,0 +1,111 @@
+{
+    "title" : "Population of Switzerland in 2015",
+    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-18",
+    "propertyName" : "population",
+    "data": [
+        {
+            "code": "ZH",
+            "value": 1553423
+        },
+        {
+            "code": "BE",
+            "value": 1043132
+        },
+        {
+            "code": "LU",
+            "value": 416347
+        },
+        {
+            "code": "UR",
+            "value": 36819
+        },
+        {
+            "code": "SZ",
+            "value": 162157
+        },
+        {
+            "code": "OW",
+            "value": 38108
+        },
+        {
+            "code": "NW",
+            "value": 43520
+        },
+        {
+            "code": "GL",
+            "value": 40851
+        },
+        {
+            "code": "ZG",
+            "value": 128794
+        },
+        {
+            "code": "FR",
+            "value": 325496
+        },
+        {
+            "code": "SO",
+            "value": 277462
+        },
+        {
+            "code": "BS",
+            "value": 201156
+        },
+        {
+            "code": "BL",
+            "value": 292955
+        },
+        {
+            "code": "SH",
+            "value": 83107
+        },
+        {
+            "code": "AR",
+            "value": 55309
+        },
+        {
+            "code": "AI",
+            "value": 16293
+        },
+        {
+            "code": "SG",
+            "value": 514504
+        },
+        {
+            "code": "GR",
+            "value": 200096
+        },
+        {
+            "code": "AG",
+            "value": 694072
+        },
+        {
+            "code": "TG",
+            "value": 282909
+        },
+        {
+            "code": "TI",
+            "value": 350986
+        },
+        {
+            "code": "VD",
+            "value": 814762
+        },
+        {
+            "code": "VS",
+            "value": 348503
+        },
+        {
+            "code": "NE",
+            "value": 175894
+        },
+        {
+            "code": "GE",
+            "value": 506343
+        },
+        {
+            "code": "JU",
+            "value": 73709
+        }
+    ]
+}
