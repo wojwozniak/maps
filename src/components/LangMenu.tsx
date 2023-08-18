@@ -39,19 +39,29 @@ const LangMenu:React.FC<LangMenuProps> = ({openPopup, getUpdatedLang}) => {
             className='nav__lang' 
             onClick={() => setOpenLangMenu(!openLangMenu)}
             style={openLangMenu ? activeStyle : emptyStyle}>
+
             <Flag currentLang={currentLang} />
-            <ul className="nav__lang__menu" style={openLangMenu ? (openPopup ?activeClosedMenuStyle : showStyle ) : emptyStyle}>
-                <li className='nav__lang__menu__items' onClick={() => setLang('en')}>
+            
+            <ul 
+                className="nav__lang__menu" 
+                style={openLangMenu ? (openPopup ?activeClosedMenuStyle : showStyle ) : emptyStyle}>
+
+                <li 
+                    className='nav__lang__menu__items' 
+                    onClick={() => setLang('en')}>
+
                     English
                 </li>
                 <li 
-                className='nav__lang__menu__items'
-                onClick={() => setLang('pl')}>
+                    className='nav__lang__menu__items'
+                    onClick={() => setLang('pl')}>
+
                     Polski
                 </li>
                 <li 
-                className='nav__lang__menu__items'
-                onClick={() => setLang('de')}>
+                    className='nav__lang__menu__items'
+                    onClick={() => setLang('de')}>
+
                     Deutsch
                 </li>
             </ul>
