@@ -1,132 +1,132 @@
 [
-    {
-      "id": "ZH",
+  {
+      "code": "ZH",
       "name": "Zürich",
-      "code": "01"
-    },
-    {
-      "id": "BE",
+      "id": "01"
+  },
+  {
+      "code": "BE",
       "name": "Bern",
-      "code": "02"
-    },
-    {
-      "id": "LU",
+      "id": "02"
+  },
+  {
+      "code": "LU",
       "name": "Luzern",
-      "code": "03"
-    },
-    {
-      "id": "UR",
+      "id": "03"
+  },
+  {
+      "code": "UR",
       "name": "Uri",
-      "code": "04"
-    },
-    {
-      "id": "SZ",
+      "id": "04"
+  },
+  {
+      "code": "SZ",
       "name": "Schwyz",
-      "code": "05"
-    },
-    {
-      "id": "OW",
+      "id": "05"
+  },
+  {
+      "code": "OW",
       "name": "Obwalden",
-      "code": "06"
-    },
-    {
-      "id": "NW",
+      "id": "06"
+  },
+  {
+      "code": "NW",
       "name": "Nidwalden",
-      "code": "07"
-    },
-    {
-      "id": "GL",
+      "id": "07"
+  },
+  {
+      "code": "GL",
       "name": "Glarus",
-      "code": "08"
-    },
-    {
-      "id": "ZG",
+      "id": "08"
+  },
+  {
+      "code": "ZG",
       "name": "Zug",
-      "code": "09"
-    },
-    {
-      "id": "FR",
+      "id": "09"
+  },
+  {
+      "code": "FR",
       "name": "Freiburg",
-      "code": "10"
-    },
-    {
-      "id": "SO",
+      "id": "10"
+  },
+  {
+      "code": "SO",
       "name": "Solothurn",
-      "code": "11"
-    },
-    {
-      "id": "BS",
+      "id": "11"
+  },
+  {
+      "code": "BS",
       "name": "Basel-Stadt",
-      "code": "12"
-    },
-    {
-      "id": "BL",
+      "id": "12"
+  },
+  {
+      "code": "BL",
       "name": "Basel-Landschaft",
-      "code": "13"
-    },
-    {
-      "id": "SH",
+      "id": "13"
+  },
+  {
+      "code": "SH",
       "name": "Schaffhausen",
-      "code": "14"
-    },
-    {
-      "id": "AR",
+      "id": "14"
+  },
+  {
+      "code": "AR",
       "name": "Appenzell Ausserrhoden",
-      "code": "15"
-    },
-    {
-      "id": "AI",
+      "id": "15"
+  },
+  {
+      "code": "AI",
       "name": "Appenzell Innerrhoden",
-      "code": "16"
-    },
-    {
-      "id": "SG",
+      "id": "16"
+  },
+  {
+      "code": "SG",
       "name": "St. Gallen",
-      "code": "17"
-    },
-    {
-      "id": "GR",
+      "id": "17"
+  },
+  {
+      "code": "GR",
       "name": "Graubünden",
-      "code": "18"
-    },
-    {
-      "id": "AG",
+      "id": "18"
+  },
+  {
+      "code": "AG",
       "name": "Aargau",
-      "code": "19"
-    },
-    {
-      "id": "TG",
+      "id": "19"
+  },
+  {
+      "code": "TG",
       "name": "Thurgau",
-      "code": "20"
-    },
-    {
-      "id": "TI",
+      "id": "20"
+  },
+  {
+      "code": "TI",
       "name": "Tessin",
-      "code": "21"
-    },
-    {
-      "id": "VD",
+      "id": "21"
+  },
+  {
+      "code": "VD",
       "name": "Waadt",
-      "code": "22"
-    },
-    {
-      "id": "VS",
+      "id": "22"
+  },
+  {
+      "code": "VS",
       "name": "Wallis",
-      "code": "23"
-    },
-    {
-      "id": "NE",
+      "id": "23"
+  },
+  {
+      "code": "NE",
       "name": "Neuenburg",
-      "code": "24"
-    },
-    {
-      "id": "GE",
+      "id": "24"
+  },
+  {
+      "code": "GE",
       "name": "Genf",
-      "code": "25"
-    },
-    {
-      "id": "JU",
+      "id": "25"
+  },
+  {
+      "code": "JU",
       "name": "Jura",
-      "code": "26"
-    }
-  ]
+      "id": "26"
+  }
+]
