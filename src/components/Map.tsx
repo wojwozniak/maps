@@ -2,7 +2,11 @@ import { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import { Data, CantonCode } from '../types';
 
-const Map: React.FC = () => {
+interface MapProps {
+  dataset: string;
+}
+
+const Map: React.FC<MapProps> = ( { dataset } ) => {
   const svgRef = useRef(null);
 
   /* ### Scaling ### */
@@ -12,6 +16,9 @@ const Map: React.FC = () => {
   const scaleFactor = 11;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
   /* ### End of scaling ### */
+
+  const [cantons, setCantons] = useState<CantonCode[]>([]);
+  const [topography, setTopography] = useState<any>([]);
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
@@ -27,9 +34,9 @@ const Map: React.FC = () => {
 
     const pathGenerator = d3.geoPath().projection(projection);
 
-    var blues = d3.scaleOrdinal(d3.schemeBlues[9]);
+    const color = d3.scaleSequential(d3.interpolateBlues);
 
-    const ready = (topo: any, cantonCodes: CantonCode[], data: Data) => {
+    const drawD3 = (topo: any, cantonCodes: CantonCode[], data: Data) => {
       svg.append('g')
         .selectAll('path')
         .data(topo.features)
@@ -44,10 +51,7 @@ const Map: React.FC = () => {
           const cantonData = data.data.filter((item) => item.code === cantonCode);
           let cantonValue = cantonData[0].value;
           cantonValue = parseInt(cantonValue);
-          console.log(cantonValue);
-          if (cantonValue < 300000) {
-            return "red";
-          } else return "green";
+          return color((cantonValue-16293) / 1553423)!.toString();
         })
         .style('stroke', 'black')
         .style('stroke-width', .2);
@@ -57,18 +61,42 @@ const Map: React.FC = () => {
     // ### Fetching data ###
     async function waitForPromisesAndRunD3() {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/cantons.json');
-        const jsonCantons = await response.json();
-        const response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
-        const jsonPopulation = await response2.json();
+        // Define helper variables
+        let response, response2, response3, jsonCantons:CantonCode[], jsonData:Data, localTopography:any;
 
-        d3.json('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson')
-          .then((topo) => {
-            ready(topo, jsonCantons, jsonPopulation);
-          })
-          .catch((error) => {
-            throw error;
-          });
+        // Fetch canton data
+        if(cantons != null && cantons.length > 0 && cantons != undefined) { 
+          jsonCantons = cantons;
+        } else {
+          response = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/cantons.json');
+          jsonCantons = await response.json();
+          setCantons(jsonCantons);
+        }
+
+        // Fetch statistics data
+        if(dataset === '2015-population') {
+          response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
+        }
+        if(response2 === undefined) {
+          response2 = new Response();
+        }
+        jsonData = await response2.json();
+
+        // Fetch topography data
+        if(topography != null && topography.length > 0 && topography != undefined) {
+          localTopography = topography;
+        } else {
+          response3 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson');
+          localTopography = await response3.json();
+          setTopography(localTopography);
+        }
+
+        // Run d3 renderer
+        try {
+          drawD3(localTopography, jsonCantons, jsonData);
+        } catch (error) {
+          console.error('Error while running d3:', error);
+        }
       } catch (error) {
         console.error('Error while waiting for promises:', error);
       }
