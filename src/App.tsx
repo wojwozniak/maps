@@ -21,7 +21,7 @@ i18n.use(Backend).use(LanguageDetector).init({
 
 const App = () => {
   const [openPopup, setOpenPopup] = useState(false);
-  const [dataset, setDataset] = useState('');
+  const [dataset, setDataset] = useState("2015-population");
 
   const updateDataset = (dataset: string) => {
     setDataset(dataset);
@@ -37,8 +37,8 @@ const App = () => {
       <I18nextProvider i18n={i18n}>
         <Navbar onMenuClick={toggleMenu} openPopup={openPopup} />
         <PickDataMenu updateDataset={updateDataset} openPopup={openPopup} />
-        <h1 className="title">Data title</h1>
-        <Map />
+        <h1 className="title">{dataset}</h1>
+        { !openPopup && <Map dataset={dataset} /> }
         <Footer />
       </I18nextProvider>
     </div>
