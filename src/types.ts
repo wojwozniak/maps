@@ -1,4 +1,4 @@
-export interface DataItem {
+export interface Data {
     title: string;
     source: string;
     data: {
