@@ -9,6 +9,7 @@ interface MapProps {
 const Map: React.FC<MapProps> = ( { dataset } ) => {
   const svgRef = useRef(null);
 
+
   /* ### Scaling ### */
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
@@ -16,6 +17,7 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
   const scaleFactor = 11;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
   /* ### End of scaling ### */
+
 
   const [cantons, setCantons] = useState<CantonCode[]>([]);
   const [topography, setTopography] = useState<any>([]);
@@ -57,6 +59,7 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
         .style('stroke-width', .2);
     };
     /* ### End of actual map code ### */
+
 
     // ### Fetching data ###
     async function waitForPromisesAndRunD3() {
@@ -121,9 +124,10 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
       window.removeEventListener('resize', handleResize);
     };
     // ### End of Resize ###
-
   }, []);
 
+
+  
   return (
     <svg ref={svgRef} className='svg' />
   );
