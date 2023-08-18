@@ -7,13 +7,16 @@ const Map:React.FC = () => {
   const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
   const [svgHeight, setSvgHeight] = useState((viewportWidth * .4 * 2) / 3);
 
+  const scaleFactor = 11;
+  const [scale, updateScale] = useState(svgWidth * scaleFactor);
+
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     svg.attr('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
     svg.style('background-color', '#FEFFFE');
 
     const projection = d3.geoMercator()
-      .scale(3500)
+      .scale(scale)
       .center([8.2310, 46.8182])
       .translate([svgWidth / 2, svgHeight / 2]);
 
@@ -44,7 +47,9 @@ const Map:React.FC = () => {
         const newViewportWidth = window.innerWidth;
         setViewportWidth(newViewportWidth);
         setSvgWidth(newViewportWidth * 0.8);
-        setSvgHeight((newViewportWidth * 0.8 * 8) / 13);
+        const newSvgHeight = (newViewportWidth * 0.8 * 8) / 13;
+        setSvgHeight(newSvgHeight);
+        updateScale(newSvgHeight * scaleFactor);
     }
 
     window.addEventListener('resize', handleResize);
