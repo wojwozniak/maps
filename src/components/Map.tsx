@@ -27,6 +27,7 @@ const Map: React.FC = () => {
 
     const pathGenerator = d3.geoPath().projection(projection);
 
+    var blues = d3.scaleOrdinal(d3.schemeBlues[9]);
 
     const ready = (topo: any, cantonCodes: CantonCode[], data: Data) => {
       svg.append('g')
@@ -51,18 +52,19 @@ const Map: React.FC = () => {
         .style('stroke', 'black')
         .style('stroke-width', .2);
     };
+    /* ### End of actual map code ### */
 
-
+    // ### Fetching data ###
     async function waitForPromisesAndRunD3() {
       try {
         const response = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/cantons.json');
-        const jsonData = await response.json();
+        const jsonCantons = await response.json();
         const response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
-        const jsonData2 = await response2.json();
+        const jsonPopulation = await response2.json();
 
         d3.json('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson')
           .then((topo) => {
-            ready(topo, jsonData, jsonData2);
+            ready(topo, jsonCantons, jsonPopulation);
           })
           .catch((error) => {
             throw error;
@@ -72,8 +74,8 @@ const Map: React.FC = () => {
       }
     }
     waitForPromisesAndRunD3();
-
-    /* ### End of actual map code ### */
+    // ### End of fetching data ###
+    
 
     // ### Resize ###
     function handleResize() {
