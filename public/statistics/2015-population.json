@@ -1,110 +1,111 @@
 {
     "title" : "Population of Switzerland in 2015",
     "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-18",
-    "data" : [
+    "propertyName" : "population",
+    "data": [
         {
             "code": "ZH",
-            "population": 1553423
+            "value": 1553423
         },
         {
             "code": "BE",
-            "population": 1043132
+            "value": 1043132
         },
         {
             "code": "LU",
-            "population": 416347
+            "value": 416347
         },
         {
             "code": "UR",
-            "population": 36819
+            "value": 36819
         },
         {
             "code": "SZ",
-            "population": 162157
+            "value": 162157
         },
         {
             "code": "OW",
-            "population": 38108
+            "value": 38108
         },
         {
             "code": "NW",
-            "population": 43520
+            "value": 43520
         },
         {
             "code": "GL",
-            "population": 40851
+            "value": 40851
         },
         {
             "code": "ZG",
-            "population": 128794
+            "value": 128794
         },
         {
             "code": "FR",
-            "population": 325496
+            "value": 325496
         },
         {
             "code": "SO",
-            "population": 277462
+            "value": 277462
         },
         {
             "code": "BS",
-            "population": 201156
+            "value": 201156
         },
         {
             "code": "BL",
-            "population": 292955
+            "value": 292955
         },
         {
             "code": "SH",
-            "population": 83107
+            "value": 83107
         },
         {
             "code": "AR",
-            "population": 55309
+            "value": 55309
         },
         {
             "code": "AI",
-            "population": 16293
+            "value": 16293
         },
         {
             "code": "SG",
-            "population": 514504
+            "value": 514504
         },
         {
             "code": "GR",
-            "population": 200096
+            "value": 200096
         },
         {
             "code": "AG",
-            "population": 694072
+            "value": 694072
         },
         {
             "code": "TG",
-            "population": 282909
+            "value": 282909
         },
         {
             "code": "TI",
-            "population": 350986
+            "value": 350986
         },
         {
             "code": "VD",
-            "population": 814762
+            "value": 814762
         },
         {
             "code": "VS",
-            "population": 348503
+            "value": 348503
         },
         {
             "code": "NE",
-            "population": 175894
+            "value": 175894
         },
         {
             "code": "GE",
-            "population": 506343
+            "value": 506343
         },
         {
             "code": "JU",
-            "population": 73709
+            "value": 73709
         }
     ]
 }
