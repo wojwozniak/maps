@@ -3,7 +3,7 @@ export interface DataItem {
     source: string;
     data: {
         code: string;
-        [key: string]: any;
+        value: any;
     }[];
 }
 
