@@ -1,7 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
+import { Data, CantonCode } from '../types';
 
-const Map:React.FC = () => {
+const Map: React.FC = () => {
   const svgRef = useRef(null);
 
   /* ### Scaling ### */
@@ -26,7 +27,8 @@ const Map:React.FC = () => {
 
     const pathGenerator = d3.geoPath().projection(projection);
 
-    const ready = (topo:any) => {
+
+    const ready = (topo: any, cantonCodes: CantonCode[], data: Data) => {
       svg.append('g')
         .selectAll('path')
         .data(topo.features)
@@ -34,34 +36,59 @@ const Map:React.FC = () => {
         .append('path')
         // @ts-ignore
         .attr('d', pathGenerator)
-        .style('fill', 'green')
+        .style('fill', (d: any) => {
+          let cantonId = d.properties.id.toString();
+          if(cantonId.length === 1) { cantonId = '0' + cantonId; }
+          const cantonCode = cantonCodes.filter((canton) => canton.id === cantonId)[0].code;
+          const cantonData = data.data.filter((item) => item.code === cantonCode);
+          let cantonValue = cantonData[0].value;
+          cantonValue = parseInt(cantonValue);
+          console.log(cantonValue);
+          if (cantonValue < 300000) {
+            return "red";
+          } else return "green";
+        })
         .style('stroke', 'black')
         .style('stroke-width', .2);
     };
 
-    d3.json('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson')
-      .then(ready)
-      .catch((error) => {
-        throw error;
-    });
+
+    async function waitForPromisesAndRunD3() {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/cantons.json');
+        const jsonData = await response.json();
+        const response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
+        const jsonData2 = await response2.json();
+
+        d3.json('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson')
+          .then((topo) => {
+            ready(topo, jsonData, jsonData2);
+          })
+          .catch((error) => {
+            throw error;
+          });
+      } catch (error) {
+        console.error('Error while waiting for promises:', error);
+      }
+    }
+    waitForPromisesAndRunD3();
+
     /* ### End of actual map code ### */
-
-
 
     // ### Resize ###
     function handleResize() {
-        const newViewportWidth = window.innerWidth;
-        setViewportWidth(newViewportWidth);
-        setSvgWidth(newViewportWidth * 0.8);
-        const newSvgHeight = (newViewportWidth * 0.8 * 8) / 13;
-        setSvgHeight(newSvgHeight);
-        updateScale(newSvgHeight * scaleFactor);
+      const newViewportWidth = window.innerWidth;
+      setViewportWidth(newViewportWidth);
+      setSvgWidth(newViewportWidth * 0.8);
+      const newSvgHeight = (newViewportWidth * 0.8 * 8) / 13;
+      setSvgHeight(newSvgHeight);
+      updateScale(newSvgHeight * scaleFactor);
     }
 
     window.addEventListener('resize', handleResize);
 
     return () => {
-    window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResize);
     };
     // ### End of Resize ###
 
