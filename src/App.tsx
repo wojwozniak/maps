@@ -8,6 +8,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { I18nextProvider } from 'react-i18next';
 import Footer from './components/Footer';
+import { Dataset, DatasetList } from './datasets';
 
 i18n.use(Backend).use(LanguageDetector).init({
   fallbackLng: 'en',
@@ -21,9 +22,9 @@ i18n.use(Backend).use(LanguageDetector).init({
 
 const App = () => {
   const [openPopup, setOpenPopup] = useState(false);
-  const [dataset, setDataset] = useState("2015-population");
+  const [dataset, setDataset] = useState<Dataset>(DatasetList[0]);
 
-  const updateDataset = (dataset: string) => {
+  const updateDataset = (dataset: Dataset) => {
     setDataset(dataset);
     setOpenPopup(false);
   }
@@ -37,8 +38,8 @@ const App = () => {
       <I18nextProvider i18n={i18n}>
         <Navbar onMenuClick={toggleMenu} openPopup={openPopup} />
         <PickDataMenu updateDataset={updateDataset} openPopup={openPopup} />
-        <h1 className="title">{dataset}</h1>
-        { !openPopup && <Map dataset={dataset} /> }
+        <h1 className="title">{dataset.label}</h1>
+        { !openPopup && <Map dataset={dataset.name} /> }
         <Footer />
       </I18nextProvider>
     </div>

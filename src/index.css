@@ -179,3 +179,8 @@ body, #root, html {
 #subtitle {
   font-size: 1.25rem;
 }
+
+.dataset {
+  cursor: pointer;
+  color: blue;
+}

@@ -1,5 +1,7 @@
+import { Dataset, DatasetList } from '../datasets';
+
 interface PickDataMenuProps {
-    updateDataset: (dataset:string) => void;
+    updateDataset: (dataset:Dataset) => void;
     openPopup: boolean;
 }
 
@@ -8,8 +10,9 @@ const PickDataMenu:React.FC<PickDataMenuProps> = ({updateDataset, openPopup}) =>
     const emptyStyle = {};
     const openStyle = { height: '100%' };
 
-    const handleUpdateDataSet = () => {
-        updateDataset('test');
+    const handleUpdateDataSet = (e:any, i:number) => {
+        e.preventDefault();
+        updateDataset(DatasetList[i]);
     }
 
   return (
@@ -21,7 +24,17 @@ const PickDataMenu:React.FC<PickDataMenuProps> = ({updateDataset, openPopup}) =>
             <div>
                 <p>Select dataset from list</p>
                 <ol>
-                    <li>aaa</li>
+                    {DatasetList.map(
+                        (dataset, i) => {
+                            return (
+                                <li className='dataset' 
+                                    key={i} 
+                                    onClick={(e) => handleUpdateDataSet(e, i)}>
+                                    {dataset.label}
+                                </li>
+                            )
+                        })
+                    }
                 </ol>
             </div>
         </div>
