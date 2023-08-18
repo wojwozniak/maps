@@ -14,7 +14,7 @@ import Title from './components/Title';
 i18n.use(Backend).use(LanguageDetector).init({
   fallbackLng: 'en',
   detection: {
-    order: ['navigator'],
+    order: ['localStorage', 'navigator'],
   },
   interpolation: {
     escapeValue: false,
