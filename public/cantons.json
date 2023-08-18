@@ -1,0 +1,132 @@
+[
+    {
+      "id": "ZH",
+      "name": "Zürich",
+      "code": "01"
+    },
+    {
+      "id": "BE",
+      "name": "Bern",
+      "code": "02"
+    },
+    {
+      "id": "LU",
+      "name": "Luzern",
+      "code": "03"
+    },
+    {
+      "id": "UR",
+      "name": "Uri",
+      "code": "04"
+    },
+    {
+      "id": "SZ",
+      "name": "Schwyz",
+      "code": "05"
+    },
+    {
+      "id": "OW",
+      "name": "Obwalden",
+      "code": "06"
+    },
+    {
+      "id": "NW",
+      "name": "Nidwalden",
+      "code": "07"
+    },
+    {
+      "id": "GL",
+      "name": "Glarus",
+      "code": "08"
+    },
+    {
+      "id": "ZG",
+      "name": "Zug",
+      "code": "09"
+    },
+    {
+      "id": "FR",
+      "name": "Freiburg",
+      "code": "10"
+    },
+    {
+      "id": "SO",
+      "name": "Solothurn",
+      "code": "11"
+    },
+    {
+      "id": "BS",
+      "name": "Basel-Stadt",
+      "code": "12"
+    },
+    {
+      "id": "BL",
+      "name": "Basel-Landschaft",
+      "code": "13"
+    },
+    {
+      "id": "SH",
+      "name": "Schaffhausen",
+      "code": "14"
+    },
+    {
+      "id": "AR",
+      "name": "Appenzell Ausserrhoden",
+      "code": "15"
+    },
+    {
+      "id": "AI",
+      "name": "Appenzell Innerrhoden",
+      "code": "16"
+    },
+    {
+      "id": "SG",
+      "name": "St. Gallen",
+      "code": "17"
+    },
+    {
+      "id": "GR",
+      "name": "Graubünden",
+      "code": "18"
+    },
+    {
+      "id": "AG",
+      "name": "Aargau",
+      "code": "19"
+    },
+    {
+      "id": "TG",
+      "name": "Thurgau",
+      "code": "20"
+    },
+    {
+      "id": "TI",
+      "name": "Tessin",
+      "code": "21"
+    },
+    {
+      "id": "VD",
+      "name": "Waadt",
+      "code": "22"
+    },
+    {
+      "id": "VS",
+      "name": "Wallis",
+      "code": "23"
+    },
+    {
+      "id": "NE",
+      "name": "Neuenburg",
+      "code": "24"
+    },
+    {
+      "id": "GE",
+      "name": "Genf",
+      "code": "25"
+    },
+    {
+      "id": "JU",
+      "name": "Jura",
+      "code": "26"
+    }
+  ]
