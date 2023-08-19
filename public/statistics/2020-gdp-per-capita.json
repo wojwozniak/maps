@@ -1,0 +1,111 @@
+{
+    "title" : "GDP per Capita in Switzerland in 2020",
+    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
+    "propertyName" : "gdppc",
+    "data": [
+        {
+            "code": "ZH",
+            "value": 96359
+        },
+        {
+            "code": "BE",
+            "value": 77027
+        },
+        {
+            "code": "LU",
+            "value": 67936
+        },
+        {
+            "code": "UR",
+            "value": 54006
+        },
+        {
+            "code": "SZ",
+            "value": 61223
+        },
+        {
+            "code": "OW",
+            "value": 67453
+        },
+        {
+            "code": "NW",
+            "value": 66209
+        },
+        {
+            "code": "GL",
+            "value": 67849
+        },
+        {
+            "code": "ZG",
+            "value": 156210
+        },
+        {
+            "code": "FR",
+            "value": 59263
+        },
+        {
+            "code": "SO",
+            "value": 65237
+        },
+        {
+            "code": "BS",
+            "value": 189354
+        },
+        {
+            "code": "BL",
+            "value": 70866
+        },
+        {
+            "code": "SH",
+            "value": 87569
+        },
+        {
+            "code": "AR",
+            "value": 57601
+        },
+        {
+            "code": "AI",
+            "value": 64358
+        },
+        {
+            "code": "SG",
+            "value": 74210
+        },
+        {
+            "code": "GR",
+            "value": 72754
+        },
+        {
+            "code": "AG",
+            "value": 63177
+        },
+        {
+            "code": "TG",
+            "value": 61190
+        },
+        {
+            "code": "TI",
+            "value": 83450
+        },
+        {
+            "code": "VD",
+            "value": 70250
+        },
+        {
+            "code": "VS",
+            "value": 55313
+        },
+        {
+            "code": "NE",
+            "value": 87080
+        },
+        {
+            "code": "GE",
+            "value": 102876
+        },
+        {
+            "code": "JU",
+            "value": 63643
+        }
+    ]
+}
