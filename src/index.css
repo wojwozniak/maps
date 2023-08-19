@@ -70,6 +70,7 @@ body, #root, html {
 /* ### PICK DATA ### */
 #title {
   font-size: 3rem;
+  text-align: center;
 }
 
 #subtitle {
@@ -80,10 +81,20 @@ body, #root, html {
 .dataset {
   cursor: pointer;
   color: blue;
+  width: fit-content;
+}
+
+.dataset__picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0px;
 }
 
 .pick__data__menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -172,9 +183,9 @@ body, #root, html {
 
 /* ### MAP ### */
 .svg {
-  margin: 10px;
+  margin: 10px 20px;
   border-radius: 10px;
-  max-height: 75vmin;
+  max-height: 67vmin;
   border: 1px solid black;
 }
 

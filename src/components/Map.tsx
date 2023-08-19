@@ -11,9 +11,10 @@ const Map: React.FC<MapProps> = ({ link }) => {
   const legendRef = useRef(null);
 
   /* ### Scaling ### */
+  const secondScale = .34;
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-  const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
-  const [svgHeight, setSvgHeight] = useState((viewportWidth * .4 * 2) / 3);
+  const [svgWidth, setSvgWidth] = useState(viewportWidth * secondScale);
+  const [svgHeight, setSvgHeight] = useState((viewportWidth * secondScale * 2) / 3);
   const scaleFactor = 10;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
 

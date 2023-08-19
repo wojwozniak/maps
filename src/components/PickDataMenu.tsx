@@ -23,9 +23,9 @@ const PickDataMenu: React.FC<PickDataMenuProps> = ({ updateDataset, openPopup })
                 <div className="content">
                     <h2 id="title">Interactive D3.js Maps</h2>
                     <Description />
-                    <div>
+                    <div style={{textAlign: "center"}}>
                         <p>Select dataset from list</p>
-                        <ol>
+                        <ol className='dataset__picker'>
                             {DatasetList.map(
                                 (dataset, i) => {
                                     return (
@@ -43,7 +43,7 @@ const PickDataMenu: React.FC<PickDataMenuProps> = ({ updateDataset, openPopup })
             </div>
             {openPopup &&
                 <div style={{
-                    position: 'fixed',
+                    position: 'absolute',
                     zIndex: 100,
                     width: "90%",
                     bottom: "10px",
