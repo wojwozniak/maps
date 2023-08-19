@@ -27,5 +27,12 @@ export const DatasetList: Dataset[] = [
         labelPL: "Gęstość zaludnienia w 2015",
         labelDE: "Bevölkerungsdichte im Jahr 2015",
         link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/population-density.json'
+    },
+    { 
+        name: "2020-gdp",
+        labelEN: "GDP in 2020 in millions CHF",
+        labelPL: "PKB w 2020 w milionach CHF",
+        labelDE: "BIP im Jahr 2020 in Millionen CHF",
+        link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2020-total-gdp.json'
     }
 ];
