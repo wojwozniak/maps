@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
-import { Data, CantonCode } from '../types';
+import { Data, CantonCode, ParsedData, ParserOutput } from '../types';
 
 interface MapProps {
   dataset: string;
 }
 
-const Map: React.FC<MapProps> = ( { dataset } ) => {
+const Map: React.FC<MapProps> = ({ dataset }) => {
   const svgRef = useRef(null);
 
 
@@ -38,7 +38,8 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
 
     const color = d3.scaleSequential(d3.interpolateBlues);
 
-    const drawD3 = (topo: any, cantonCodes: CantonCode[], data: Data) => {
+    const drawD3 = (topo: any, parsed: ParserOutput) => {
+      const {data, smallest, biggest} = parsed;
       svg.append('g')
         .selectAll('path')
         .data(topo.features)
@@ -46,14 +47,14 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
         .append('path')
         // @ts-ignore
         .attr('d', pathGenerator)
-        .style('fill', (d: any) => {
-          let cantonId = d.properties.id.toString();
-          if(cantonId.length === 1) { cantonId = '0' + cantonId; }
-          const cantonCode = cantonCodes.filter((canton) => canton.id === cantonId)[0].code;
-          const cantonData = data.data.filter((item) => item.code === cantonCode);
-          let cantonValue = cantonData[0].value;
-          cantonValue = parseInt(cantonValue);
-          return color((cantonValue-16293) / 1553423)!.toString();
+        .style('fill', (d:any) => {
+          let id = d.properties.id;
+          id = id.toString();
+          if(id.length === 1) { id = '0' + id; }
+          let cantonData:ParsedData = data.filter((item) => item.id === id)[0];
+          let cantonValue = cantonData.value;
+          let colorValue = (cantonValue - smallest) / (biggest - smallest);
+          return color(colorValue) as string;
         })
         .style('stroke', 'black')
         .style('stroke-width', .2);
@@ -65,10 +66,10 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
     async function waitForPromisesAndRunD3() {
       try {
         // Define helper variables
-        let response, response2, response3, jsonCantons:CantonCode[], jsonData:Data, localTopography:any;
+        let response, response2, response3, jsonCantons: CantonCode[], jsonData: Data, localTopography: any;
 
         // Fetch canton data
-        if(cantons != null && cantons.length > 0 && cantons != undefined) { 
+        if (cantons != null && cantons.length > 0 && cantons != undefined) {
           jsonCantons = cantons;
         } else {
           response = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/cantons.json');
@@ -77,16 +78,38 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
         }
 
         // Fetch statistics data
-        if(dataset === '2015-population') {
+        if (dataset === '2015-population') {
           response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
         }
-        if(response2 === undefined) {
+        if (response2 === undefined) {
           response2 = new Response();
         }
         jsonData = await response2.json();
 
+        // Parse data
+        const parseData = (data: Data, cantons:CantonCode[]) => {
+          let smallest = Number.MAX_SAFE_INTEGER;
+          let biggest = Number.MIN_SAFE_INTEGER;
+          const newCantons:ParsedData[] = cantons.map((canton:CantonCode) => {
+            let cantonCode = canton.code;
+            const cantonData = data.data.filter((item) => item.code === cantonCode);
+            let cantonValue = cantonData[0].value;
+            cantonValue = parseInt(cantonValue);
+            if (cantonValue < smallest) { smallest = cantonValue; }
+            if (cantonValue > biggest) { biggest = cantonValue; }
+            return {
+              id: canton.id,
+              name: canton.name,
+              code: cantonCode,
+              value: cantonValue
+            }
+          });
+          let output: ParserOutput = { data:newCantons, smallest, biggest };
+          return output;
+        };
+
         // Fetch topography data
-        if(topography != null && topography.length > 0 && topography != undefined) {
+        if (topography != null && topography.length > 0 && topography != undefined) {
           localTopography = topography;
         } else {
           response3 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson');
@@ -96,7 +119,7 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
 
         // Run d3 renderer
         try {
-          drawD3(localTopography, jsonCantons, jsonData);
+          drawD3(localTopography, parseData(jsonData, jsonCantons));
         } catch (error) {
           console.error('Error while running d3:', error);
         }
@@ -106,7 +129,7 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
     }
     waitForPromisesAndRunD3();
     // ### End of fetching data ###
-    
+
 
     // ### Resize ###
     function handleResize() {
@@ -127,7 +150,7 @@ const Map: React.FC<MapProps> = ( { dataset } ) => {
   }, []);
 
 
-  
+
   return (
     <svg ref={svgRef} className='svg' />
   );
