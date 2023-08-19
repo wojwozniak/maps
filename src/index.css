@@ -13,7 +13,7 @@
 }
 
 body, #root, html {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -32,7 +32,8 @@ body, #root, html {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  min-height: 100vh;
   background-color: #FFF;
 }
 
@@ -58,7 +59,12 @@ body, #root, html {
   font-size: 1.5rem;
   font-weight: bold;
   width: calc(100% - 120px);
-  margin: 5px;
+  margin: 0px 5px;
+}
+
+.desc__text {
+  margin: 10px 8vw;
+  text-align: center;
 }
 
 /* ### PICK DATA ### */
@@ -68,6 +74,7 @@ body, #root, html {
 
 #subtitle {
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .dataset {
@@ -173,12 +180,12 @@ body, #root, html {
 
 .map__container {
   width: 100%;
-  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: top;
   overflow: hidden;
+  margin-top: 100px;
 }
 
 .canton {
@@ -202,12 +209,11 @@ body, #root, html {
 .legend__svg {
   margin: 10px;
   width: 400px;
+  height: 50px;
 }
 
 /* ### FOOTER ### */
 .footer {
-  position: absolute;
-  bottom: 10px;
   width: calc(100% - 6rem);
   display: flex;
   flex-direction: column;
