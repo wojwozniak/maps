@@ -22,7 +22,7 @@ i18n.use(Backend).use(LanguageDetector).init({
 });
 
 const App = () => {
-  const [openPopup, setOpenPopup] = useState(false);
+  const [openPopup, setOpenPopup] = useState(true);
   const [dataset, setDataset] = useState<Dataset>(DatasetList[0]);
   const updateDataset = (dataset: Dataset) => {
     setDataset(dataset);
