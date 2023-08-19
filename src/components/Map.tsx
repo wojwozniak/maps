@@ -3,11 +3,10 @@ import * as d3 from 'd3';
 import { Data, CantonCode, ParsedData, ParserOutput } from '../types';
 
 interface MapProps {
-  dataset: string;
   link: string;
 }
 
-const Map: React.FC<MapProps> = ({ dataset, link }) => {
+const Map: React.FC<MapProps> = ({ link }) => {
   const svgRef = useRef(null);
 
   /* ### Scaling ### */
@@ -144,6 +143,7 @@ const Map: React.FC<MapProps> = ({ dataset, link }) => {
       window.removeEventListener('resize', handleResize);
     };
     // ### End of Resize ###
+    
   }, []);
 
 
