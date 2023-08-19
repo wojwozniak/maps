@@ -65,7 +65,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         })
         .style('stroke', 'black')
         .style('stroke-width', .2)
-        .on("mouseover", (event: any, d:any) => {
+        .on("mouseover", (event: any, d: any) => {
           tooltip.transition()
             .duration(200)
             .style("display", "block");
