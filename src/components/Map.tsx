@@ -9,16 +9,14 @@ interface MapProps {
 const Map: React.FC<MapProps> = ({ dataset }) => {
   const svgRef = useRef(null);
 
-
   /* ### Scaling ### */
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
   const [svgHeight, setSvgHeight] = useState((viewportWidth * .4 * 2) / 3);
   const scaleFactor = 11;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
-  /* ### End of scaling ### */
 
-
+  /* ### Data storage ### */
   const [cantons, setCantons] = useState<CantonCode[]>([]);
   const [topography, setTopography] = useState<any>([]);
 
@@ -39,7 +37,7 @@ const Map: React.FC<MapProps> = ({ dataset }) => {
     const color = d3.scaleSequential(d3.interpolateBlues);
 
     const drawD3 = (topo: any, parsed: ParserOutput) => {
-      const {data, smallest, biggest} = parsed;
+      const { data, smallest, biggest } = parsed;
       svg.append('g')
         .selectAll('path')
         .data(topo.features)
@@ -47,11 +45,11 @@ const Map: React.FC<MapProps> = ({ dataset }) => {
         .append('path')
         // @ts-ignore
         .attr('d', pathGenerator)
-        .style('fill', (d:any) => {
+        .style('fill', (d: any) => {
           let id = d.properties.id;
           id = id.toString();
-          if(id.length === 1) { id = '0' + id; }
-          let cantonData:ParsedData = data.filter((item) => item.id === id)[0];
+          if (id.length === 1) { id = '0' + id; }
+          let cantonData: ParsedData = data.filter((item) => item.id === id)[0];
           let cantonValue = cantonData.value;
           let colorValue = (cantonValue - smallest) / (biggest - smallest);
           return color(colorValue) as string;
@@ -87,10 +85,10 @@ const Map: React.FC<MapProps> = ({ dataset }) => {
         jsonData = await response2.json();
 
         // Parse data
-        const parseData = (data: Data, cantons:CantonCode[]) => {
+        const parseData = (data: Data, cantons: CantonCode[]) => {
           let smallest = Number.MAX_SAFE_INTEGER;
           let biggest = Number.MIN_SAFE_INTEGER;
-          const newCantons:ParsedData[] = cantons.map((canton:CantonCode) => {
+          const newCantons: ParsedData[] = cantons.map((canton: CantonCode) => {
             let cantonCode = canton.code;
             const cantonData = data.data.filter((item) => item.code === cantonCode);
             let cantonValue = cantonData[0].value;
@@ -104,7 +102,7 @@ const Map: React.FC<MapProps> = ({ dataset }) => {
               value: cantonValue
             }
           });
-          let output: ParserOutput = { data:newCantons, smallest, biggest };
+          let output: ParserOutput = { data: newCantons, smallest, biggest };
           return output;
         };
 
