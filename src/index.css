@@ -1,3 +1,4 @@
+/* ### GLOBAL ### */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,6 +26,16 @@ body, #root, html {
   justify-content: center;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+}
+
 .navbar {
   background-color: #D52B1E;
   transition: all 0.5s ease-in-out;
@@ -40,22 +51,18 @@ body, #root, html {
   z-index: 100;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #FFF;
+/* ### PICK DATA ### */
+#title {
+  font-size: 3rem;
 }
 
-.svg {
-  margin: 20px;
-  margin-left: 7vw;
-  margin-right: 7vw;
-  border-radius: 10px;
-  max-height: 60vmin;
+#subtitle {
+  font-size: 1.25rem;
+}
+
+.dataset {
+  cursor: pointer;
+  color: blue;
 }
 
 .pick__data__menu {
@@ -86,35 +93,7 @@ body, #root, html {
   width: 60%;
 }
 
-.footer {
-  position: absolute;
-  bottom: 10px;
-  width: calc(100% - 6rem);
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: end;
-  color: silver;
-  font-size: 12px;
-  border-top: 1px solid silver;
-  margin-bottom: 10px;
-  z-index: 100;
-}
-
-.footer p {
-  margin: 0px;
-}
-
-.footer a {
-  color: goldenrod;
-}
-
-.title {
-  margin: 0px;
-  text-transform: uppercase;
-  font-size: 3rem;
-}
-
+/* ### NAV LANG ### */
 .nav__lang {
   position: absolute;
   right: 50px;
@@ -174,15 +153,51 @@ body, #root, html {
   z-index: 1000;
 }
 
-#title {
-  font-size: 3rem;
+/* ### MAP ### */
+.svg {
+  margin: 10px;
+  border-radius: 10px;
+  max-height: 75vmin;
+  border: 1px solid black;
 }
 
-#subtitle {
-  font-size: 1.25rem;
+.map__container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  overflow: hidden;
 }
 
-.dataset {
-  cursor: pointer;
-  color: blue;
+/* ### LEGEND ### */
+
+.legend__svg {
+  margin: 10px;
+  width: 400px;
+}
+
+/* ### FOOTER ### */
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: calc(100% - 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  color: silver;
+  font-size: 12px;
+  border-top: 1px solid silver;
+  margin-bottom: 10px;
+  z-index: 100;
+}
+
+.footer p {
+  margin: 0px;
+}
+
+.footer a {
+  color: goldenrod;
 }

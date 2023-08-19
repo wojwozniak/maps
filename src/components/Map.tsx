@@ -8,12 +8,13 @@ interface MapProps {
 
 const Map: React.FC<MapProps> = ({ link }) => {
   const svgRef = useRef(null);
+  const legendRef = useRef(null);
 
   /* ### Scaling ### */
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
   const [svgHeight, setSvgHeight] = useState((viewportWidth * .4 * 2) / 3);
-  const scaleFactor = 10.5;
+  const scaleFactor = 10;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
 
   /* ### Data storage ### */
@@ -25,6 +26,8 @@ const Map: React.FC<MapProps> = ({ link }) => {
     svg.attr('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
     svg.style('background-color', '#FEFFFE');
 
+    const legendSvg = d3.select(legendRef.current);
+    
 
     /* ### Actual map code ### */
     const projection = d3.geoMercator()
@@ -61,17 +64,18 @@ const Map: React.FC<MapProps> = ({ link }) => {
 
       /* ### Legend ### */
 
-      const legend = svg.append("g")
+      const legend = legendSvg.append("g")
         .attr("class", "legend")
-        .attr("transform", `translate(50, ${svgHeight - 30})`);
+        .attr("transform", `translate(30, 20)`);
 
+      const rectWidth = 30;
       const numColors = 10;
       for (let i = 0; i < numColors; i++) {
         legend.append("rect")
-          .attr("x", i * 20)
+          .attr("x", i * rectWidth)
           .attr("y", 0)
-          .attr("width", 20)
-          .attr("height", 20)
+          .attr("width", rectWidth)
+          .attr("height", rectWidth)
           .style("stroke", "black")
           .style("stroke-width", .2)
           .style("fill", color(i / numColors) as string);
@@ -84,7 +88,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         .text(smallest);
 
       legend.append("text")
-        .attr("x", numColors * 20 - 35)
+        .attr("x", numColors * rectWidth - 35)
         .attr("y", -5)
         .text(biggest);
       /* ### End of legend ### */
@@ -180,7 +184,10 @@ const Map: React.FC<MapProps> = ({ link }) => {
 
 
   return (
-    <svg ref={svgRef} className='svg' />
+    <>
+      <svg ref={svgRef} className='svg' preserveAspectRatio='xMidYMid' />
+      <svg ref={legendRef} className='legend__svg' preserveAspectRatio='xMidYMid' />
+    </>
   );
 }
 
