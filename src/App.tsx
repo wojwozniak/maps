@@ -9,7 +9,6 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { I18nextProvider } from 'react-i18next';
 import Footer from './components/Footer';
 import { Dataset, DatasetList } from './datasets';
-import Title from './components/Title';
 
 i18n.use(Backend).use(LanguageDetector).init({
   fallbackLng: 'en',
@@ -64,10 +63,11 @@ const App = () => {
   return (
     <div className='App'>
       <I18nextProvider i18n={i18n}>
-        <Navbar onMenuClick={toggleMenu} openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
+        <Navbar label={label} onMenuClick={toggleMenu} openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
         <PickDataMenu updateDataset={updateDataset} openPopup={openPopup} />
-        <Title label={label} />
-        { !openPopup && <Map link={dataset.link} /> }
+        <div className='map__container'>
+          { !openPopup && <Map link={dataset.link} /> }
+        </div>
         <Footer />
       </I18nextProvider>
     </div>

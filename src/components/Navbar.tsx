@@ -5,16 +5,17 @@ interface NavbarProps {
   onMenuClick: () => void;
   openPopup: boolean;
   getUpdatedLang: (s: string) => void;
+  label: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, getUpdatedLang }) => {
+const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, getUpdatedLang, label }) => {
   return (
     <div
       style={{ backgroundColor: openPopup ? '#FFFFFF' : '#D52B1E' }}
       className='navbar'
     >
       <div style={{ fontWeight: 'bold' }}>
-        {!openPopup ? <h2 style={{ color: 'white' }}>Interactive Swiss Maps</h2> : <></>}
+      <h2 style={{ color: 'white' }}> {openPopup ? "Interactive Swiss Maps" : label}</h2>
       </div>
       <LangMenu openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
       {openPopup
