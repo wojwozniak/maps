@@ -69,8 +69,8 @@ const App = () => {
         <div className='map__container'>
           { !openPopup && <Map link={dataset.link} /> }
         </div>
-        <Description />
-        { !openPopup && <Footer /> }
+        { !openPopup && <Description /> }
+        <Footer />
       </I18nextProvider>
     </div>
   )

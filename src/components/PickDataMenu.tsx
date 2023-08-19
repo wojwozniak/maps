@@ -10,7 +10,7 @@ interface PickDataMenuProps {
 const PickDataMenu: React.FC<PickDataMenuProps> = ({ updateDataset, openPopup }) => {
 
     const emptyStyle = {};
-    const openStyle = { height: '100%' };
+    const openStyle = { height: '100%', minHeight: '85vh' };
 
     const handleUpdateDataSet = (e: any, i: number) => {
         e.preventDefault();
@@ -41,20 +41,6 @@ const PickDataMenu: React.FC<PickDataMenuProps> = ({ updateDataset, openPopup })
                     </div>
                 </div>
             </div>
-            {openPopup &&
-                <div style={{
-                    position: 'absolute',
-                    zIndex: 100,
-                    width: "90%",
-                    bottom: "10px",
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}>
-                    <Footer />
-                </div>
-            }
         </>
     )
 }
