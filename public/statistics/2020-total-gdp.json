@@ -1,0 +1,111 @@
+{
+    "title" : "GDP in millions CHF in 2020",
+    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
+    "propertyName" : "gdp",
+    "data": [
+        {
+            "code": "ZH",
+            "value": 149004
+        },
+        {
+            "code": "BE",
+            "value": 80209
+        },
+        {
+            "code": "LU",
+            "value": 28176
+        },
+        {
+            "code": "UR",
+            "value": 1985
+        },
+        {
+            "code": "SZ",
+            "value": 9876
+        },
+        {
+            "code": "OW",
+            "value": 2564
+        },
+        {
+            "code": "NW",
+            "value": 2867
+        },
+        {
+            "code": "GL",
+            "value": 2763
+        },
+        {
+            "code": "ZG",
+            "value": 20029
+        },
+        {
+            "code": "FR",
+            "value": 19180
+        },
+        {
+            "code": "SO",
+            "value": 18029
+        },
+        {
+            "code": "BS",
+            "value": 37168
+        },
+        {
+            "code": "BL",
+            "value": 20567
+        },
+        {
+            "code": "SH",
+            "value": 7244
+        },
+        {
+            "code": "AR",
+            "value": 3190
+        },
+        {
+            "code": "AI",
+            "value": 1043
+        },
+        {
+            "code": "SG",
+            "value": 38041
+        },
+        {
+            "code": "GR",
+            "value": 14519
+        },
+        {
+            "code": "AG",
+            "value": 43590
+        },
+        {
+            "code": "TG",
+            "value": 17208
+        },
+        {
+            "code": "TI",
+            "value": 29311
+        },
+        {
+            "code": "VD",
+            "value": 56898
+        },
+        {
+            "code": "VS",
+            "value": 19194
+        },
+        {
+            "code": "NE",
+            "value": 15343
+        },
+        {
+            "code": "GE",
+            "value": 51976
+        },
+        {
+            "code": "JU",
+            "value": 4687
+        }
+    ]
+}
