@@ -13,7 +13,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [svgWidth, setSvgWidth] = useState(viewportWidth * .4);
   const [svgHeight, setSvgHeight] = useState((viewportWidth * .4 * 2) / 3);
-  const scaleFactor = 11;
+  const scaleFactor = 10.5;
   const [scale, updateScale] = useState(svgWidth * scaleFactor);
 
   /* ### Data storage ### */
@@ -56,8 +56,39 @@ const Map: React.FC<MapProps> = ({ link }) => {
         })
         .style('stroke', 'black')
         .style('stroke-width', .2);
+
+      /* ### End of actual map code ### */
+
+      /* ### Legend ### */
+
+      const legend = svg.append("g")
+        .attr("class", "legend")
+        .attr("transform", `translate(50, ${svgHeight - 30})`);
+
+      const numColors = 10;
+      for (let i = 0; i < numColors; i++) {
+        legend.append("rect")
+          .attr("x", i * 20)
+          .attr("y", 0)
+          .attr("width", 20)
+          .attr("height", 20)
+          .style("stroke", "black")
+          .style("stroke-width", .2)
+          .style("fill", color(i / numColors) as string);
+      }
+
+      // Add text labels to the legend
+      legend.append("text")
+        .attr("x", -10)
+        .attr("y", -5)
+        .text(smallest);
+
+      legend.append("text")
+        .attr("x", numColors * 20 - 35)
+        .attr("y", -5)
+        .text(biggest);
+      /* ### End of legend ### */
     };
-    /* ### End of actual map code ### */
 
 
     // ### Fetching data ###
@@ -143,7 +174,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
       window.removeEventListener('resize', handleResize);
     };
     // ### End of Resize ###
-    
+
   }, []);
 
 
