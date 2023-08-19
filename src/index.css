@@ -39,7 +39,9 @@ body, #root, html {
 .navbar {
   background-color: #D52B1E;
   transition: all 0.5s ease-in-out;
-  height: 50px;
+  min-height: 70px;
+  max-height: 120px;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,6 +51,15 @@ body, #root, html {
   left: 0;
   right: 0;
   z-index: 100;
+}
+
+.nav__title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: calc(100% - 120px);
+  margin: 5px;
 }
 
 /* ### PICK DATA ### */
@@ -97,7 +108,7 @@ body, #root, html {
 .nav__lang {
   position: absolute;
   right: 50px;
-  height: 100%;
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
