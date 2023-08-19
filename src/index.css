@@ -130,6 +130,7 @@ body, #root, html {
   border-radius: 0px 0px 10px 10px;
   transition: .5s ease-in-out;
   z-index: 20;
+  cursor: pointer;
 }
 
 .nav__lang__menu {
@@ -159,6 +160,7 @@ body, #root, html {
   justify-content: center;
   width: 100%;
   z-index: 12;
+  cursor: pointer;
 }
 
 .menu__button {
