@@ -42,7 +42,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
     const tooltip = d3.select("body")
       .append("div")
       .attr("class", "tooltip")
-      .style("opacity", 0);
+      .style("display", "none");
 
     const drawD3 = (topo: any, parsed: ParserOutput) => {
       const { data, smallest, biggest } = parsed;
@@ -68,7 +68,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         .on("mouseover", (event: any, d:any) => {
           tooltip.transition()
             .duration(200)
-            .style("opacity", 1);
+            .style("display", "block");
           tooltip.html(() => {
             let id = d.properties.id;
             id = id.toString();
@@ -82,7 +82,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         .on("mouseout", () => {
           tooltip.transition()
             .duration(500)
-            .style("opacity", 0);
+            .style("display", "none");
         });;
 
       /* ### End of actual map code ### */
