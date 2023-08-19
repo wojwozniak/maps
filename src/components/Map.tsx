@@ -46,6 +46,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         .data(topo.features)
         .enter()
         .append('path')
+        .attr('class', 'canton')
         // @ts-ignore
         .attr('d', pathGenerator)
         .style('fill', (d: any) => {

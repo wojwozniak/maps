@@ -171,6 +171,14 @@ body, #root, html {
   overflow: hidden;
 }
 
+.canton {
+  cursor: pointer;
+}
+
+.canton:hover {
+  stroke-width: 1px !important;
+}
+
 /* ### LEGEND ### */
 
 .legend__svg {
