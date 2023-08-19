@@ -4,9 +4,10 @@ import { Data, CantonCode, ParsedData, ParserOutput } from '../types';
 
 interface MapProps {
   dataset: string;
+  link: string;
 }
 
-const Map: React.FC<MapProps> = ({ dataset }) => {
+const Map: React.FC<MapProps> = ({ dataset, link }) => {
   const svgRef = useRef(null);
 
   /* ### Scaling ### */
@@ -75,10 +76,8 @@ const Map: React.FC<MapProps> = ({ dataset }) => {
           setCantons(jsonCantons);
         }
 
-        // Fetch statistics data
-        if (dataset === '2015-population') {
-          response2 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2015-population.json');
-        }
+        // Fetch data
+        response2 = await fetch(link);
         if (response2 === undefined) {
           response2 = new Response();
         }
