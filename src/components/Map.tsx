@@ -27,7 +27,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
     svg.style('background-color', '#FEFFFE');
 
     const legendSvg = d3.select(legendRef.current);
-    
+
 
     /* ### Actual map code ### */
     const projection = d3.geoMercator()
@@ -38,6 +38,11 @@ const Map: React.FC<MapProps> = ({ link }) => {
     const pathGenerator = d3.geoPath().projection(projection);
 
     const color = d3.scaleSequential(d3.interpolateBlues);
+
+    const tooltip = d3.select("body")
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
     const drawD3 = (topo: any, parsed: ParserOutput) => {
       const { data, smallest, biggest } = parsed;
@@ -59,7 +64,26 @@ const Map: React.FC<MapProps> = ({ link }) => {
           return color(colorValue) as string;
         })
         .style('stroke', 'black')
-        .style('stroke-width', .2);
+        .style('stroke-width', .2)
+        .on("mouseover", (event: any, d:any) => {
+          tooltip.transition()
+            .duration(200)
+            .style("opacity", 1);
+          tooltip.html(() => {
+            let id = d.properties.id;
+            id = id.toString();
+            if (id.length === 1) { id = '0' + id; }
+            let cantonData: ParsedData = data.filter((item) => item.id === id)[0];
+            return `${cantonData.name}: ${cantonData.value}`;
+          })
+            .style("left", `${event.pageX + 10}px`)
+            .style("top", `${event.pageY - 40}px`);
+        })
+        .on("mouseout", () => {
+          tooltip.transition()
+            .duration(500)
+            .style("opacity", 0);
+        });;
 
       /* ### End of actual map code ### */
 
