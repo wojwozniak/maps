@@ -16,9 +16,9 @@ export const DatasetList: Dataset[] = [
     },
     { 
         name: "2020-gdp-per-capita",
-        labelEN: "GDP per Capita in 2020",
-        labelPL: "PKB na mieszkańca w 2020",
-        labelDE: "BIP pro Kopf im Jahr 2020",
+        labelEN: "GDP per Capita in 2020 [CHF]",
+        labelPL: "PKB na mieszkańca w 2020 [CHF]",
+        labelDE: "BIP pro Kopf im Jahr 2020 [CHF]",
         link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2020-gdp-per-capita.json'
     },
     { 
