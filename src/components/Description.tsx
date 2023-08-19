@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 
 
 const Description = () => {
-    const { t } = useTranslation();
+    //const { t } = useTranslation();
     return (
         <div style={{marginBottom: "20px"}}>
             <h4 id="subtitle">Exploring Switzerland through Data: A D3.js adventure</h4>

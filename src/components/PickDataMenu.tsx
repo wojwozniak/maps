@@ -1,6 +1,5 @@
 import { Dataset, DatasetList } from '../datasets';
 import Description from './Description';
-import Footer from './Footer';
 
 interface PickDataMenuProps {
     updateDataset: (dataset: Dataset) => void;
