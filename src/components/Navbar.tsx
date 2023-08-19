@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, getUpdatedLang,
       className='navbar'
     >
       <div style={{ fontWeight: 'bold' }}>
-      <h2 style={{ color: 'white' }}> {openPopup ? "Interactive Swiss Maps" : label}</h2>
+      <h2 style={{ color: 'white' }}> {openPopup ? "" : label}</h2>
       </div>
       <LangMenu openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
       {openPopup
