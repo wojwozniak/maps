@@ -67,7 +67,7 @@ const App = () => {
         <Navbar label={label} onMenuClick={toggleMenu} openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
         <PickDataMenu updateDataset={updateDataset} openPopup={openPopup} />
         <div className='map__container'>
-          { !openPopup && <Map link={dataset.link} /> }
+          { !openPopup && <Map link={dataset.link} map={dataset.map} /> }
         </div>
         { !openPopup && <Description /> }
         <Footer />

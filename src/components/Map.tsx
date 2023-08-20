@@ -4,9 +4,10 @@ import { Data, CantonCode, ParsedData, ParserOutput } from '../types';
 
 interface MapProps {
   link: string;
+  map: string;
 }
 
-const Map: React.FC<MapProps> = ({ link }) => {
+const Map: React.FC<MapProps> = ({ link, map }) => {
   const svgRef = useRef(null);
   const legendRef = useRef(null);
 
@@ -169,7 +170,7 @@ const Map: React.FC<MapProps> = ({ link }) => {
         if (topography != null && topography.length > 0 && topography != undefined) {
           localTopography = topography;
         } else {
-          response3 = await fetch('https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson');
+          response3 = await fetch(map);
           localTopography = await response3.json();
           setTopography(localTopography);
         }
