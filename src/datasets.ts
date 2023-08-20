@@ -39,13 +39,5 @@ export const DatasetList: Dataset[] = [
         labelDE: "BIP im Jahr 2020 in Millionen CHF",
         link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2020-total-gdp.json',
         map: "https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson"
-    },
-    {
-        name: "2023-06-citizens-wroclaw",
-        labelEN: "Citizens of Wroclaw in 2023-06",
-        labelPL: "Mieszkańcy Wrocławia w 2023-06",
-        labelDE: "Bürger von Breslau im Jahr 2023-06",
-        link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2020-total-gdp.json',
-        map: "https://raw.githubusercontent.com/wojwozniak/maps/main/public/wroclaw-max.geojson"
     }
 ];
