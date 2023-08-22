@@ -117,66 +117,6 @@ body, #root, html {
   width: 60%;
 }
 
-/* ### NAV LANG ### */
-.nav__lang {
-  position: absolute;
-  right: 50px;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  color: white;
-  background-color: #D52B1E;
-  padding: 0px 10px 0 15px;
-  border-radius: 0px 0px 10px 10px;
-  transition: .5s ease-in-out;
-  z-index: 20;
-  cursor: pointer;
-}
-
-.nav__lang__menu {
-  background-color: #D52B1E;
-  position: absolute !important;
-  top: 34px;
-  right: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  height: 0px;
-  transition: height 0.5s ease-in-out, border-radius 0.5s ease-out;
-  gap: 5px;
-  list-style-type: none;
-  padding: 0px 10px;
-  width: 80px;
-  border-radius: 0px 0px 10px 10px;
-  overflow: hidden;
-}
-
-.nav__lang__menu__items {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: center;
-  width: 100%;
-  z-index: 12;
-  cursor: pointer;
-}
-
-.menu__button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  z-index: 1000;
-}
-
 /* ### MAP ### */
 .svg {
   margin: 10px 20px;

@@ -31,7 +31,7 @@ const PickDataMenu: React.FC<PickDataMenuProps> = ({ updateDataset, openPopup })
                                         <li className='dataset'
                                             key={i}
                                             onClick={(e) => handleUpdateDataSet(e, i)}>
-                                            {dataset.labelEN}
+                                            {dataset.label}
                                         </li>
                                     )
                                 })

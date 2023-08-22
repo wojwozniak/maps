@@ -1,14 +1,12 @@
 import { AiOutlineMenu } from 'react-icons/ai';
-import LangMenu from './LangMenu';
 
 interface NavbarProps {
   onMenuClick: () => void;
   openPopup: boolean;
-  getUpdatedLang: (s: string) => void;
   label: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, getUpdatedLang, label }) => {
+const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, label }) => {
   return (
     <div
       style={{ backgroundColor: openPopup ? '#FFFFFF' : '#D52B1E' }}
@@ -17,7 +15,6 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuClick, openPopup, getUpdatedLang,
       <h2 className='nav__title'>
         {openPopup ? "" : label}
       </h2>
-      <LangMenu openPopup={openPopup} getUpdatedLang={getUpdatedLang} />
       {openPopup
         ? <></>
         : <button
