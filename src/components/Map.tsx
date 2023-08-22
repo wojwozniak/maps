@@ -46,7 +46,7 @@ const Map: React.FC<MapProps> = ({ link, map }) => {
       .attr("class", "tooltip")
       .style("display", "none");
 
-    const drawD3 = (topo: any, parsed: ParserOutput) => {
+    const drawD3Map = (topo: any, parsed: ParserOutput) => {
       const { data, smallest, biggest } = parsed;
       svg.append('g')
         .selectAll('path')
@@ -177,7 +177,7 @@ const Map: React.FC<MapProps> = ({ link, map }) => {
 
         // Run d3 renderer
         try {
-          drawD3(localTopography, parseData(jsonData, jsonCantons));
+          drawD3Map(localTopography, parseData(jsonData, jsonCantons));
         } catch (error) {
           console.error('Error while running d3:', error);
         }

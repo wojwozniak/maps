@@ -4,7 +4,6 @@ import Navbar from './components/Navbar'
 import './index.css'
 import Footer from './components/Footer';
 import { Dataset, DatasetList } from './datasets';
-import Description from './components/Description';
 import PickDataMenu from './components/PickDataMenu';
 
 
@@ -34,7 +33,7 @@ const App = () => {
         <div className='map__container'>
           { !openPopup && <Map link={dataset.link} map={dataset.map} /> }
         </div>
-        { !openPopup && <Description /> }
+        { !openPopup && <p>{dataset.desc}</p>}
         <Footer />
     </div>
   )
