@@ -1,7 +1,7 @@
 {
-    "title" : "Population of Switzerland in 2015",
-    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-18",
-    "propertyName" : "population",
+    "title": "Population of Switzerland in 2015",
+    "source": "Wikipedia - Cantons of Switzerland, version from 2023-08-18",
+    "propertyName": "population",
     "data": [
         {
             "code": "ZH",

@@ -1,7 +1,7 @@
 {
-    "title" : "GDP per Capita in Switzerland in 2020",
-    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
-    "propertyName" : "gdppc",
+    "title": "GDP per Capita in Switzerland in 2020",
+    "source": "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
+    "propertyName": "gdppc",
     "data": [
         {
             "code": "ZH",

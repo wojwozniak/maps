@@ -29,9 +29,16 @@ export const DatasetList: Dataset[] = [
         desc: "This map displays the GDP in 2020. The data is taken from Wikipedia."
     },
     { 
-        name: "2014-taxiation",
+        name: "2014-100k-taxiation",
         label: "Personal Income Tax in 2014 for one person with 100'000 CHF income",
-        link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2014-personal-income-tax.json',
+        link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2014-100k-personal-income-tax.json',
+        map: "https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson",
+        desc: "This map displays the personal income tax in 2014 for one person with 100'000 CHF income. The data is taken from Wikipedia."
+    },
+    { 
+        name: "2014-200k-taxiation",
+        label: "Personal Income Tax in 2014 for one person with 200'000 CHF income",
+        link: 'https://raw.githubusercontent.com/wojwozniak/maps/main/public/statistics/2014-200k-personal-income-tax.json',
         map: "https://raw.githubusercontent.com/wojwozniak/maps/main/public/ch-cantons.geojson",
         desc: "This map displays the personal income tax in 2014 for one person with 100'000 CHF income. The data is taken from Wikipedia."
     }

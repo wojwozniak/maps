@@ -1,7 +1,7 @@
 {
-    "title" : "GDP in millions CHF in 2020",
-    "source" : "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
-    "propertyName" : "gdp",
+    "title": "GDP in millions CHF in 2020",
+    "source": "Wikipedia - Cantons of Switzerland, version from 2023-08-19",
+    "propertyName": "gdp",
     "data": [
         {
             "code": "ZH",
