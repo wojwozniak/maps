@@ -1,0 +1,111 @@
+{
+    "title" : "Personal Income Tax Rates in Switzerland in 2014 (single person earning 100 000 CHF)",
+    "source" : "Wikipedia - Taxation in Switzerland, version from 2023-08-26",
+    "propertyName" : "taxation",
+    "data": [
+        {
+          "code": "ZH",
+          "value": 11018
+        },
+        {
+          "code": "BE",
+          "value": 15483
+        },
+        {
+          "code": "LU",
+          "value": 12552
+        },
+        {
+          "code": "UR",
+          "value": 10589
+        },
+        {
+          "code": "SZ",
+          "value": 8583
+        },
+        {
+          "code": "OW",
+          "value": 9907
+        },
+        {
+          "code": "NW",
+          "value": 10709
+        },
+        {
+          "code": "GL",
+          "value": 12164
+        },
+        {
+          "code": "ZG",
+          "value": 5729
+        },
+        {
+          "code": "FR",
+          "value": 15443
+        },
+        {
+          "code": "SO",
+          "value": 15770
+        },
+        {
+          "code": "BS",
+          "value": 15586
+        },
+        {
+          "code": "BL",
+          "value": 15667
+        },
+        {
+          "code": "SH",
+          "value": 14150
+        },
+        {
+          "code": "AR",
+          "value": 13503
+        },
+        {
+          "code": "AI",
+          "value": 10308
+        },
+        {
+          "code": "SG",
+          "value": 16116
+        },
+        {
+          "code": "GR",
+          "value": 12585
+        },
+        {
+          "code": "AG",
+          "value": 13004
+        },
+        {
+          "code": "TG",
+          "value": 12704
+        },
+        {
+          "code": "TI",
+          "value": 13138
+        },
+        {
+          "code": "VD",
+          "value": 16027
+        },
+        {
+          "code": "VS",
+          "value": 13876
+        },
+        {
+          "code": "NE",
+          "value": 17002
+        },
+        {
+          "code": "GE",
+          "value": 15103
+        },
+        {
+          "code": "JU",
+          "value": 16441
+        }
+      ]
+}
